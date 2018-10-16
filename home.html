@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {  
+    max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
+</style>
+</head>
+<body onload="startTime()">
+<font color="white">
+<div id="goto"><img src="images/loading.gif"></div>
+
+<script>
+
+var OSName="Unknown OS";
+if (navigator.userAgent.indexOf("Linux") != -1) OSName="Linux";
+if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+if (navigator.userAgent.indexOf("Win") != -1) OSName = "desktop/home-win.html";
+if (navigator.userAgent.indexOf("Android") != -1) OSName = "mobile/home-android.html";
+if (navigator.userAgent.indexOf("Mac") != -1) OSName = "desktop/home-mac.html";
+if (navigator.userAgent.indexOf("like Mac") != -1) OSName = "mobile/home-iphone.html";
+
+function startTime() {
+setTimeout(function(){ document.getElementById("goto").innerHTML = location.href = OSName; }, 2000);
+}
+</script>
+</font>
+</body>
+</html>
